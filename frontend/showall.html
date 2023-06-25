@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>GoodBookPlus ShowAll</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		// $(document).ready(function () {
+
+		// 	let val1 = document.getElementById("find_center_txt").value.toLowerCase();
+		// 	let val2 = document.getElementById("find_fname_txt").value.toLowerCase();
+		// 	let val3 = document.getElementById("find_lname_txt").value.toLowerCase();
+
+		// 	$("#find_id_btn").click(function () {
+		// 		$.ajax({
+		// 			url: "http://localhost:3000/students/id=" + $("#find_id_txt").val(),
+		// 			type: "GET",
+		// 			contentType: "application/json",
+		// 			dataType: "json",
+		// 			success: function (data, textStatus, jQxhr) {
+
+
+		// 				var out = " ID : " + data.id + "<br> First Name : " + data.firstname +
+		// 					"<br> Last Name :" + data.lastname + "<br> Date OF Birth : " + data.dateofbirth + "<br> Center : " + data.center + "<br> Cgpa : " + data.cgpa + "<br> Email : " + data.email + "<br> Semester : " + data.semester + "<br>";
+
+		// 				document.getElementById("SFname").innerHTML = out;
+
+		// 			},
+		// 			error: function (jqXhr, textStatus, errorThrown) {
+		// 				console.log(errorThrown);
+		// 			}
+		// 		});
+		// 	});
+		// 	$("#find_fname_btn").click(function () {
+		// 		$.ajax({
+		// 			url: "http://localhost:3000/students/firstname=" + $("#find_fname_txt").val(),
+		// 			type: "GET",
+		// 			contentType: "application/json",
+		// 			dataType: "json",
+		// 			success: function (data, textStatus, jQxhr) {
+		// 				var out = " ID : " + data.id + "<br> First Name : " + data.firstname +
+		// 					"<br> Last Name :" + data.lastname + "<br> Date OF Birth : " + data.dateofbirth + "<br> Center : " + data.center + "<br> Cgpa : " + data.cgpa + "<br> Email : " + data.email + "<br> Semester : " + data.semester + "<br>";
+
+		// 				document.getElementById("SFname").innerHTML = out;
+		// 			},
+		// 			error: function (jqXhr, textStatus, errorThrown) {
+		// 				console.log(errorThrown);
+		// 			}
+		// 		});
+		// 	});
+		// });
+
+
+		// $("#find_lname_btn").click(function () {
+		// 	$.ajax({
+		// 		url: "http://localhost:3000/students/lastname" + $("#find_lname_txt").val(),
+		// 		type: "GET",
+		// 		contentType: "application/json",
+		// 		dataType: "json",
+		// 		success: function (data, textStatus, jQxhr) {
+		// 			var out = " ID : " + data.id + "<br> First Name : " + data.firstname +
+		// 				"<br> Last Name :" + data.lastname + "<br> Date OF Birth : " + data.dateofbirth + "<br> Center : " + data.center + "<br> Cgpa : " + data.cgpa + "<br> Email : " + data.email + "<br> Semester : " + data.semester + "<br>";
+
+		// 			document.getElementById("SFname").innerHTML = out;
+		// 		},
+		// 		error: function (jqXhr, textStatus, errorThrown) {
+		// 			console.log(errorThrown);
+		// 		}
+		// 	});
+		// });
+
+
+		// $("#find_center_btn").click(function () {
+		// 	$.ajax({
+		// 		url: "http://localhost:3000/students/" + $("#find_center_txt").val(),
+		// 		type: "GET",
+		// 		contentType: "application/json",
+		// 		dataType: "json",
+		// 		success: function (data, textStatus, jQxhr) {
+		// 			var out = " ID : " + data.id + "<br> First Name : " + data.firstname +
+		// 				"<br> Last Name :" + data.lastname + "<br> Date OF Birth : " + data.dateofbirth + "<br> Center : " + data.center + "<br> Cgpa : " + data.cgpa + "<br> Email : " + data.email + "<br> Semester : " + data.semester + "<br>";
+
+		// 			document.getElementById("SFname").innerHTML = out;
+		// 		},
+		// 		error: function (jqXhr, textStatus, errorThrown) {
+		// 			console.log(errorThrown);
+		// 		}
+		// 	});
+		// });
+
+		// $("#find_semester_btn").click(function () {
+		// 	$.ajax({
+		// 		url: "http://localhost:3000/students/" + $("#find_semester_txt").val(),
+		// 		type: "GET",
+		// 		contentType: "application/json",
+		// 		dataType: "json",
+		// 		success: function (data, textStatus, jQxhr) {
+		// 			var out = " ID : " + data.id + "<br> First Name : " + data.firstname +
+		// 				"<br> Last Name :" + data.lastname + "<br> Date OF Birth : " + data.dateofbirth + "<br> Center : " + data.center + "<br> Cgpa : " + data.cgpa + "<br> Email : " + data.email + "<br> Semester : " + data.semester + "<br>";
+
+		// 			document.getElementById("SFname").innerHTML = out;
+		// 		},
+		// 		error: function (jqXhr, textStatus, errorThrown) {
+		// 			console.log(errorThrown);
+		// 		}
+		// 	});
+		// });
+		// $("#find_cgpa_btn").click(function () {
+		// 	$.ajax({
+		// 		url: "http://localhost:3000/students/cgpa=" + $("#find_cgpa_txt").val(),
+		// 		type: "GET",
+		// 		contentType: "application/json",
+		// 		dataType: "json",
+		// 		success: function (data, textStatus, jQxhr) {
+		// 			var out = " ID : " + data.id + "<br> First Name : " + data.firstname +
+		// 				"<br> Last Name :" + data.lastname + "<br> Date OF Birth : " + data.dateofbirth + "<br> Center : " + data.center + "<br> Cgpa : " + data.cgpa + "<br> Email : " + data.email + "<br> Semester : " + data.semester + "<br>";
+
+		// 			document.getElementById("SFname").innerHTML = out;
+		// 		},
+		// 		error: function (jqXhr, textStatus, errorThrown) {
+		// 			console.log(errorThrown);
+		// 		}
+		// 	});
+		// });
+		async function SHOWALL() {
+			const tableBody = document.getElementById('studentTableBody');
+			// const data = await fetch("http://localhost:3000/students");
+			// const jsonData = await data.json();
+			// console.log(jsonData);
+			fetch("http://localhost:3000/students")
+				.then(response => response.json())
+				.then(data => {
+					// Iterate over the data array and generate table rows
+					data.forEach(student => {
+						const row = document.createElement('tr');
+
+						row.innerHTML = `
+									<td>${student.SID}</td>
+									<td>${student.FName}</td>
+									<td>${student.LName}</td>
+									<td>${student.Email}</td>
+								`;
+						tableBody.appendChild(row);
+					});
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+
+
+
+		}
+		async function showBySID() {
+			var id = document.getElementById("find_id_txt").value;
+			var studentid = parseInt(id);
+			const data = await fetch("http://localhost:3000/students/id/" + studentid);
+			const jsonData = await data.json();
+			console.log(jsonData);
+			var msg = "Hi " + jsonData.FName + " " + jsonData.LName + "! User SID Number is" + jsonData.SID;
+			alert(msg)
+		}
+
+		async function showByEmail() {
+			var email = document.getElementById("find_email_txt").value;
+			const data = await fetch("http://localhost:3000/students/email/" + email); // Assuming the API endpoint is correct
+			const jsonData = await data.json();
+			console.log(jsonData);
+			var msg = "Hi " + jsonData.FName + " " + jsonData.LName + "! User SID Number is " + jsonData.SID;
+			alert(msg);
+		}
+	</script>
+	<style>
+		table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+}
+	</style>
+</head>
+
+<body onload="SHOWALL()">
+	<div class="jumbotron jumbotron-fluid" style="background-color:darkgoldenrod">
+		<div class="container">
+			<h1 class="display">GoodBookPlus</h1>
+			<hr class="my-4">
+			<h2 class="lead">Students Management System</h2>
+		</div><br>
+		<header class="navdiv">
+
+			<nav class="navbar">
+
+				<a href="Home.html">Home<br>Insert a Student</a>
+				<a href="showall.html">Show All<br>Find Students</a>
+				<a href="find.html">Find a Student</a>
+				<a href="delete.html">Delete a Student</a>
+				<a href="index.html">Info of Students</a>
+				<a href="update.html">Update a Students</a>
+			</nav>
+		</header>
+	</div>
+
+	</header>
+	<center>
+		<br>
+		<h1>Show All Students</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>SID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody id="studentTableBody"></tbody>
+		</table>
+
+		<!-- <button class="button button1" name="find_fname_btn" id="find_fname_btn" onclick="SHOWALL()">SHOW ALL</button> -->
+
+
+		<br>
+		<h1>Find Student</h1>
+		<br>SID : <input type="text" name="find_id_txt" id="find_id_txt"><br><br>
+		Enter Student's E-mail : <input type="text" name="find_fname_txt" id="find_email_txt"><br><br>
+
+		<button class="button button1" name="find_id_btn" id="find_id_btn" onclick="showBySID()">FIND BY SID</button>
+		<button class="button button1" name="find_e-mail_btn" id="find_e-mail_btn" onclick="showByEmail()">FIND Student's
+			E-mail</button>
+
+		<p id="SFname"></p>
+		<p id="SLname"></p>
+	</center><br><br>
+
+	<div class="card-footer text-center" style="background-color:darkgoldenrod">
+		<h3 class="card-title">GoodBookPlus</h3>
+		<p class="card-text">@2023 GoodBookPlus All Rights Reserved.</p>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GoodBookPlus Find</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+			async function showByFName(){
+			var studentName = document.getElementById("find_fname_txt").value;
+			const data = await fetch("http://localhost:3000/students/fname/"+studentName);
+			const jsonData = await data.json();
+			console.log(jsonData);
+			var msg= "Hi "+jsonData.FName+" "+jsonData.LName+"! User SID Number is"+jsonData.SID;
+			alert(msg)
+		}
+
+    async function showByLName(){
+			var studentName = document.getElementById("find_lname_txt").value;
+			const data = await fetch("http://localhost:3000/students/lname/"+studentName);
+			const jsonData = await data.json();
+			console.log(jsonData);
+			var msg= "Hi "+jsonData.FName+" "+jsonData.LName+"! User SID Number is"+jsonData.SID;
+			alert(msg)
+		}
+	</script>
+</script>
+
+</head>
+<body>
+  <div class="jumbotron jumbotron-fluid" style="background-color:darkgoldenrod">
+    <div class="container">
+      <h1 class="display">GoodBookPlus</h1>
+      <hr class="my-4">
+      <h2 class="lead">Students Management System</h2>
+    </div><br>
+    <header class="navdiv">
+    
+      <nav class="navbar">
+        
+            <a href="Home.html">Home<br>Insert a Student</a>
+            <a href="showall.html">Show All<br>Find Students</a>
+            <a href="find.html">Find a Student</a>
+        <a href="delete.html">Delete a Student</a>
+        <a href="index.html">Info of Students</a>
+        <a href="update.html">Update a Students</a>
+      </nav>
+  </header>
+  </div>
+
+<center>
+	<h1>Find a Student</h1>
+	
+  FIRST NAME : <input type = "text" name = "find_fname_txt" id = "find_fname_txt" ><br><br>
+  LAST NAME : <input type = "text" name = "find_lname_txt" id = "find_lname_txt" ><br><br>
+  
+       <button class="button button1" name ="find_fname_btn" id = "find_fname_btn" onclick = "showByFName()">FIND BY FIRST NAME</button>
+       <button class="button button1" name ="find_lname_btn" id = "find_lname_btn" onclick = "showByLName()">FIND BY LAST NAME</button>
+  
+  <p id="SFname"></p>
+  <p id="SLname"></p> 
+</center>
+
+
+<br><br><br><br>
+<div class="card-footer text-center" style="background-color:darkgoldenrod">
+  <h3 class="card-title">GoodBookPlus</h3>
+  <p class="card-text">@2023 GoodBookPlus All Rights Reserved.</p>
+</div>
+</body>
+</html>

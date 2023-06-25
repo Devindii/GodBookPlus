@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+
+ /*Nav bar Functions*/
+.navdiv .navbar a{
+	color: #000000;
+	font-size: 19px;
+	border-radius: 20px;
+	border:none;
+	padding: 15px;
+	cursor: pointer;
+	text-decoration: none;
+	background-color: dimgray;
+	margin-left: 50px;
+}
+	/*Navbar*/
+.navdiv {
+    position: flex;
+	height: 30px;
+	top: 0; left: 0; right: 0;
+	z-index: 999;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 4px;
+	
+}	
+	
+.navdiv .navbar a:hover{
+	color: white;
+	background: black;
+}
+	
+.footer{
+	margin-top: 127px;
+	width: 100%;
+	padding: 25px 10%;
+	background-color:#0ea1bb;
+	color: black;
+	
+}
+	
+/* Button Styles */
+.button button1 {
+  background-color: cadetblue;
+  color: #000000;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+}
+

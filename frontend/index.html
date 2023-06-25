@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoodBookPlus Index</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<script>
+  async function getFromCity() {
+    var city = document.getElementById("cityInput").value;
+    const data = await fetch("http://localhost:3000/students/city/" + city);
+    const jsonData = await data.json();
+    // Clear previous data
+    document.getElementById("studentTable").innerHTML = "";
+
+    // Create table headers
+    var tableHeaders = "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>City</th></tr>";
+    document.getElementById("studentTable").innerHTML += tableHeaders;
+
+    // Loop through each student and create table rows
+    jsonData.forEach((student) => {
+      var tableRow =
+        "<tr><td>" +
+        student.SID +
+        "</td><td>" +
+        student.FName +
+        "</td><td>" +
+        student.LName +
+        "</td><td>" +
+        student.Email +
+        "</td><td>" +
+        student.City +
+        "</td></tr>";
+      document.getElementById("studentTable").innerHTML += tableRow;
+    });
+  }
+</script>
+<style>
+  table {
+border-collapse: collapse;
+width: 100%;
+}
+
+th, td {
+border: 1px solid black;
+padding: 8px;
+}
+</style>
+<body>
+  <!-- Header -->
+  <div class="jumbotron jumbotron-fluid" style="background-color:darkgoldenrod">
+    <div class="container">
+      <h1 class="display">GoodBookPlus</h1>
+      <hr class="my-4">
+      <h2 class="lead">Students Management System</h2>
+    </div><br>
+    <header class="navdiv">
+
+      <nav class="navbar">
+
+        <a href="Home.html">Home<br>Insert a Student</a>
+        <a href="showall.html">Show All<br>Find Students</a>
+        <a href="find.html">Find a Student</a>
+        <a href="delete.html">Delete a Student</a>
+        <a href="index.html">Info of Students</a>
+        <a href="update.html">Update a Students</a>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Content -->
+  <div class="container">
+
+    <h2>Find Students by Nearest City</h2>
+    <div class="form-group">
+      <label for="cityInput">City:</label>
+      <input type="text" class="form-control" id="cityInput" placeholder="Enter city">
+    </div>
+    <button type="submit" class="btn btn-primary" onclick="getFromCity()">Search</button>
+
+    <table id="studentTable"></table>
+
+    <h2>Find Students by Course</h2>
+    <form id="findByCourseForm">
+      <div class="form-group">
+        <label for="courseInput">Course:</label>
+        <input type="text" class="form-control" id="courseInput" placeholder="Enter course">
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <h2>Find Students by Guardian</h2>
+    <form id="findByGuardianForm">
+      <div class="form-group">
+        <label for="guardianInput">Guardian:</label>
+        <input type="text" class="form-control" id="guardianInput" placeholder="Enter guardian">
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <div id="studentsList"></div>
+  </div>
+  <br>
+  <!-- Footer -->
+  <div class="card-footer text-center" style="background-color:darkgoldenrod">
+    <h3 class="card-title">GoodBookPlus</h3>
+    <p class="card-text">@2023 GoodBookPlus All Rights Reserved.</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
